@@ -112,3 +112,6 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Claude Code: commit CLAUDE.md and .claude/ (settings, hooks, commands); keep personal settings local
+.claude/settings.local.json

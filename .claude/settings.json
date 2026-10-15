@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "additionalDirectories": ["D:/OBDISIAN VAULTS/ZombieGame-Vault"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/load-memory.sh\""
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$CLAUDE_PROJECT_DIR/.claude/hooks/auto-wrap.ps1\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
