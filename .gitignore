@@ -115,3 +115,11 @@ InitTestScene*.unity*
 
 # Claude Code: commit CLAUDE.md and .claude/ (settings, hooks, commands); keep personal settings local
 .claude/settings.local.json
+
+# Third-party Asset Store packs: not redistributable, re-import from the store (see README)
+/[Aa]ssets/HiTech/
+/[Aa]ssets/HiTech.meta
+/[Aa]ssets/SciFi Warehouse Kit/
+/[Aa]ssets/SciFi Warehouse Kit.meta
+/[Aa]ssets/Zombie_Mutant/
+/[Aa]ssets/Zombie_Mutant.meta
