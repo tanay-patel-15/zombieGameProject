@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // Reads input from the project-wide actions (InputSystem_Actions) and hands it on:
-// movement to PlayerMotor, mouse look to CameraController. It doesn't move anything itself.
+// movement to PlayerMotor, mouse look to CameraController, E to PlayerInteractor.
+// It doesn't move anything itself.
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CameraController cameraController;
 
     PlayerMotor motor;
+    PlayerInteractor interactor;
     Transform view;
     InputAction moveAction;
     InputAction lookAction;
     InputAction sprintAction;
     InputAction jumpAction;
+    InputAction interactAction;
 
     // While locked, input is ignored (scene transitions, end panels). Gravity still applies.
     public bool InputLocked { get; private set; }
@@ -22,12 +25,14 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         motor = GetComponent<PlayerMotor>();
+        interactor = GetComponent<PlayerInteractor>();
 
         InputActionAsset actions = InputSystem.actions;
         moveAction = actions.FindAction("Player/Move", true);
         lookAction = actions.FindAction("Player/Look", true);
         sprintAction = actions.FindAction("Player/Sprint", true);
         jumpAction = actions.FindAction("Player/Jump", true);
+        interactAction = actions.FindAction("Player/Interact", true);
     }
 
     void Start()
@@ -56,6 +61,9 @@ public class PlayerController : MonoBehaviour
 
         Vector3 direction = GetCameraRelativeDirection(moveAction.ReadValue<Vector2>());
         motor.Move(direction, sprintAction.IsPressed(), jumpAction.WasPressedThisFrame());
+
+        if (interactor != null && interactAction.WasPressedThisFrame())
+            interactor.Interact();
     }
 
     public void SetInputLocked(bool locked)
