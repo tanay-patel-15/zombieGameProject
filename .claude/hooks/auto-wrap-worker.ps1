@@ -128,7 +128,7 @@ Steps:
    - Stay under 40 lines.
    - In its frontmatter, set updated: {{DATE}} and auto_updated_from: {{FILE}}
 5. Add this line to the Sessions list in HOME.md: - [[{{FILE}}]] - <short topic> (auto)
-6. Do not edit DESIGN.md, DECISIONS.md, or anything in systems/, _templates/ or .obsidian/.
+6. Do not edit DESIGN.md, DECISIONS.md, PLAN.md, BRIEF.md, or anything in systems/, _templates/ or .obsidian/.
 '@
   $instructions = $instructions.Replace('{{FILE}}', $file).Replace('{{DATE}}', $date)
   [System.IO.File]::WriteAllText((Join-Path $WorkDir 'instructions.md'), $instructions, $Utf8)

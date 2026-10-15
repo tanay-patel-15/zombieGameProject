@@ -1,6 +1,7 @@
 {
   "permissions": {
-    "additionalDirectories": ["D:/OBDISIAN VAULTS/ZombieGame-Vault"]
+    "additionalDirectories": ["D:/OBDISIAN VAULTS/ZombieGame-Vault"],
+    "allow": ["mcp__unity-mcp__Unity_RunCommand"]
   },
   "hooks": {
     "SessionStart": [

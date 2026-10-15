@@ -4,4 +4,4 @@ argument-hint: <topic>
 ---
 Search the Obsidian vault at `D:\OBDISIAN VAULTS\ZombieGame-Vault` for: $ARGUMENTS
 
-Look in DECISIONS.md, systems/, and sessions/ (newest first). Read the relevant notes, then give me a short answer: what we decided, what we built, where the code is, and any open issues. Name the notes you used.
+Look in DECISIONS.md, systems/, PLAN.md, BRIEF.md, and sessions/ (newest first). Read the relevant notes, then give me a short answer: what we decided, what we built, where the code is, and any open issues. Name the notes you used.
