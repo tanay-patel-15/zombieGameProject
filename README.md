@@ -20,7 +20,7 @@ Until the packs are imported, models and prefabs that use them show up as missin
 | Zombie Mutant | TODO | `Assets/Zombie_Mutant/` | Infected model |
 | HiTech Energy Cell | TODO | `Assets/HiTech/` | UV Power Core |
 
-Player animations are from [Mixamo](https://www.mixamo.com) and are included in `Assets/_Project/Animations/`.
+The player and infected animations and the two characters (the player and one infected look) are from [Mixamo](https://www.mixamo.com) and are included in `Assets/_Project/Animations/`. Their textures are extracted at 1024 px into `Assets/_Project/Materials/Textures/`.
 
 ## Credits
 
