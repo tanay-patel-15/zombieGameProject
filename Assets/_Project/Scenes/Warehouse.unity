@@ -243,6 +243,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5662881843081025309, guid: 9a47d5ceab87b1f45b4892a5e27ff001, type: 3}
   m_PrefabInstance: {fileID: 3386340}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5593463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5593464}
+  - component: {fileID: 5593465}
+  m_Layer: 0
+  m_Name: RunningLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5593464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 194250635}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &5593465
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593463}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 2
+  m_Color: {r: 1, g: 0.78, b: 0.45, a: 1}
+  m_Intensity: 4
+  m_Range: 8
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &9401397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2082,8 +2179,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 147411169}
-  m_Layer: 0
-  m_Name: Placeholder_FuelCage
+  - component: {fileID: 147411171}
+  - component: {fileID: 147411170}
+  m_Layer: 9
+  m_Name: FuelCage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2098,7 +2197,7 @@ Transform:
   m_GameObject: {fileID: 147411168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 27, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2107,6 +2206,46 @@ Transform:
   - {fileID: 1929455369}
   m_Father: {fileID: 679458273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &147411170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147411168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405c5ba73e516b48acff5ccdc4e7c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockedObjectInteractable
+  prompt: Open fuel cage
+  objective: {fileID: 11400000, guid: aae9e403d58dab147b28c92883430fbc, type: 2}
+  requiredItem: {fileID: 11400000, guid: 0c980d415a05323469c364b49291ab50, type: 2}
+  consumeItem: 0
+  missingItemMessage: The cage is chained shut. Something could cut through the chain.
+  usedMessage: You cut the chain. The cage is open.
+  door: {fileID: 1929455373}
+--- !u!65 &147411171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147411168}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.5, z: 1.8}
+  m_Center: {x: -0.55, y: 1.25, z: 0}
 --- !u!1001 &149608135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2727,6 +2866,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7716517498459035818, guid: 908e5c17cf005f54ab71e6d1d5a9e9bb, type: 3}
   m_PrefabInstance: {fileID: 190884583}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &194250634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194250635}
+  - component: {fileID: 194250637}
+  - component: {fileID: 194250636}
+  m_Layer: 9
+  m_Name: Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194250635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194250634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.15, y: 0, z: 9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2004032177}
+  - {fileID: 5593464}
+  m_Father: {fileID: 679458273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194250636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194250634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f574017c55d504db68bcce804e4759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GeneratorInteractable
+  prompt: Use generator
+  objective: {fileID: 11400000, guid: 09c1a1a198d2e1a49909431306b0d256, type: 2}
+  requiredItem: {fileID: 11400000, guid: c7660466e487f4240a33bc87cc089996, type: 2}
+  consumeItem: 1
+  missingItemMessage: The generator is out of fuel.
+  usedMessage: Generator running. The vault door is open.
+  runningObjects:
+  - {fileID: 5593463}
+  vaultDoor: {fileID: 543359774}
+--- !u!65 &194250637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194250634}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2.1, z: 2.8}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &198784911
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,8 +6820,8 @@ Transform:
   m_GameObject: {fileID: 359267941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27, y: 1.5, z: -10.7}
-  m_LocalScale: {x: 0.1, y: 3, z: 2.6}
+  m_LocalPosition: {x: 0, y: 1.5, z: -1.8000002}
+  m_LocalScale: {x: 0.1, y: 3, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147411169}
@@ -8718,7 +8934,7 @@ Transform:
   m_GameObject: {fileID: 467309398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75, y: 2, z: -22.6}
+  m_LocalPosition: {x: 2.25, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 4, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9882,7 +10098,7 @@ Transform:
   m_GameObject: {fileID: 540460505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 4.25, z: -22.6}
+  m_LocalPosition: {x: 0, y: 4.25, z: 0}
   m_LocalScale: {x: 5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10167,6 +10383,7 @@ GameObject:
   - component: {fileID: 543359773}
   - component: {fileID: 543359772}
   - component: {fileID: 543359771}
+  - component: {fileID: 543359774}
   m_Layer: 0
   m_Name: VaultDoor
   m_TagString: Untagged
@@ -10267,6 +10484,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543359769}
   m_Mesh: {fileID: 4300000, guid: b47e3bba032b35441a80e6b384d61baf, type: 3}
+--- !u!114 &543359774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543359769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1064b07efbc27f342a1e97c19736a186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpener
+  openOffset: {x: 0, y: -2.1, z: 0}
+  duration: 2
 --- !u!1001 &543629771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12852,7 +13083,7 @@ Transform:
   m_Children:
   - {fileID: 199088953}
   - {fileID: 147411169}
-  - {fileID: 2004032177}
+  - {fileID: 194250635}
   - {fileID: 779251409}
   - {fileID: 1082094877}
   - {fileID: 1204399773}
@@ -14744,8 +14975,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779251409}
-  m_Layer: 0
-  m_Name: Placeholder_UVGate
+  - component: {fileID: 779251411}
+  - component: {fileID: 779251410}
+  m_Layer: 9
+  m_Name: UVGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14760,7 +14993,7 @@ Transform:
   m_GameObject: {fileID: 779251408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: -22.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14771,6 +15004,45 @@ Transform:
   - {fileID: 873149515}
   m_Father: {fileID: 679458273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779251410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779251408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178df332b7c0af042903a190b5ac0fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UVGateInteractable
+  prompt: Use gate scanner
+  objective: {fileID: 11400000, guid: 04f1a7514794b314bb27e4c4d30cf026, type: 2}
+  requiredItem: {fileID: 11400000, guid: 2da2dbcceaeff4541ab5d0c1c9b6d13e, type: 2}
+  consumeItem: 0
+  missingItemMessage: 'Gate scanner: no UV Power Core detected.'
+  usedMessage: UV Power Core verified. Transit gate charging...
+--- !u!65 &779251411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779251408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 2, z: 1.2}
+  m_Center: {x: 3.3, y: 1, z: 0.39999962}
 --- !u!1001 &779494831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15732,7 +16004,7 @@ Transform:
   m_GameObject: {fileID: 873149514}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 0.6, z: -22.2}
+  m_LocalPosition: {x: 3.3, y: 0.6, z: 0.39999962}
   m_LocalScale: {x: 0.6, y: 1.2, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18771,7 +19043,7 @@ Transform:
   m_GameObject: {fileID: 1044168985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 2, z: -22.7}
+  m_LocalPosition: {x: 0, y: 2, z: -0.10000038}
   m_LocalScale: {x: 4, y: 4, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22519,8 +22791,8 @@ Transform:
   m_GameObject: {fileID: 1312346966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27, y: 1.5, z: -7.3}
-  m_LocalScale: {x: 0.1, y: 3, z: 2.6}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.8000002}
+  m_LocalScale: {x: 0.1, y: 3, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 147411169}
@@ -32538,6 +32810,7 @@ GameObject:
   - component: {fileID: 1929455372}
   - component: {fileID: 1929455371}
   - component: {fileID: 1929455370}
+  - component: {fileID: 1929455373}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -32554,7 +32827,7 @@ Transform:
   m_GameObject: {fileID: 1929455368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27, y: 1.5, z: -9}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 0.1, y: 3, z: 1.4000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32638,6 +32911,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929455368}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1929455373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929455368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1064b07efbc27f342a1e97c19736a186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorOpener
+  openOffset: {x: 0, y: -3.05, z: 0}
+  duration: 1.5
 --- !u!1001 &1935525010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33230,7 +33517,7 @@ Transform:
   m_GameObject: {fileID: 1981697283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.25, y: 2, z: -22.6}
+  m_LocalPosition: {x: -2.25, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 4, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33513,7 +33800,7 @@ GameObject:
   - component: {fileID: 2004032179}
   - component: {fileID: 2004032178}
   m_Layer: 0
-  m_Name: Placeholder_Generator
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33527,12 +33814,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004032176}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.15, y: 0.75, z: 9}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1.4, y: 1.5, z: 2.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 679458273}
+  m_Father: {fileID: 194250635}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2004032178
 MeshRenderer:
