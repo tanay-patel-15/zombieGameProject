@@ -13,6 +13,10 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] List<ItemData> items = new List<ItemData>();
 
+    // The items held when the current scene started. A retry puts them back, so whatever
+    // was picked up before getting caught is in the scene again rather than in the bar.
+    readonly List<ItemData> checkpoint = new List<ItemData>();
+
     // Fired after every add or remove.
     public event Action Changed;
 
@@ -60,5 +64,19 @@ public class Inventory : MonoBehaviour
 
         Changed?.Invoke();
         return true;
+    }
+
+    // SceneTransitionManager calls this each time a scene starts.
+    public void SaveCheckpoint()
+    {
+        checkpoint.Clear();
+        checkpoint.AddRange(items);
+    }
+
+    public void RestoreCheckpoint()
+    {
+        items.Clear();
+        items.AddRange(checkpoint);
+        Changed?.Invoke();
     }
 }
