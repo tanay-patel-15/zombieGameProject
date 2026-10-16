@@ -34,6 +34,20 @@ public class PlayerMotor : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+    // Moves the player instantly, e.g. to a spawn point. Safe to call before Awake.
+    public void Teleport(Vector3 position, Quaternion rotation)
+    {
+        if (controller == null)
+            controller = GetComponent<CharacterController>();
+
+        // The controller keeps its own copy of the position, so it's off while the transform moves.
+        controller.enabled = false;
+        transform.SetPositionAndRotation(position, rotation);
+        controller.enabled = true;
+        horizontalVelocity = Vector3.zero;
+        verticalVelocity = 0f;
+    }
+
     // direction is world space on the ground plane, length 0 to 1.
     public void Move(Vector3 direction, bool sprint, bool jump)
     {

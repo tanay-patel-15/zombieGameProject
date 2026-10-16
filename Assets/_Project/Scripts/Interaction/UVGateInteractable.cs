@@ -1,12 +1,22 @@
 using UnityEngine;
 
-// The UV Transit Gate at the loading dock. It scans for the UV Power Core but doesn't
-// take it: the core is installed in the next scene. Stays usable.
+// The UV Transit Gate. It scans for the UV Power Core but doesn't take it, since the core
+// is installed in the next scene, and then sends the player to the Radio Relay Tower.
 public class UVGateInteractable : RequiresItemInteractable
 {
+    [Tooltip("Loaded once the core is scanned. Must be in Build Profiles.")]
+    [SerializeField] string destinationScene = "RadioRelayTower";
+    [Tooltip("ID of the PlayerSpawnPoint the player arrives at.")]
+    [SerializeField] string destinationSpawnId = "FromWarehouse";
+
     protected override void OnItemUsed(PlayerInteractor interactor)
     {
-        // The transition to the Radio Relay Tower starts here once SceneTransitionManager
-        // exists (Oct 18).
+        if (SceneTransitionManager.Instance == null)
+        {
+            Debug.LogWarning("UVGateInteractable: no SceneTransitionManager. Is the Systems prefab missing?", this);
+            return;
+        }
+
+        SceneTransitionManager.Instance.LoadScene(destinationScene, destinationSpawnId);
     }
 }

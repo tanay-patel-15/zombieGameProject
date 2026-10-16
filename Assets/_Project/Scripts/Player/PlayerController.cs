@@ -74,9 +74,13 @@ public class PlayerController : MonoBehaviour
             interactor.Interact();
     }
 
+    // Also switches the interactor off while locked, which closes an open reading panel and
+    // hides the prompt.
     public void SetInputLocked(bool locked)
     {
         InputLocked = locked;
+        if (interactor != null)
+            interactor.enabled = !locked;
     }
 
     // W moves toward where the camera faces, flattened onto the ground.

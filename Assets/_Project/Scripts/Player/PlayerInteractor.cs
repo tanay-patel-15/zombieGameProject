@@ -68,8 +68,10 @@ public class PlayerInteractor : MonoBehaviour
             return;
 
         Focus.Interact(this);
-        // The object may have been used up; update the prompt this frame.
-        RefreshFocus();
+        // The object may have been used up; update the prompt this frame. Unless it started
+        // a transition, which locks input and switches this off.
+        if (enabled)
+            RefreshFocus();
     }
 
     public void ShowMessage(string message)
