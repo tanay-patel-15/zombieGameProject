@@ -22,6 +22,12 @@ Until the packs are imported, models and prefabs that use them show up as missin
 
 Player animations are from [Mixamo](https://www.mixamo.com) and are included in `Assets/_Project/Animations/`.
 
+## Credits
+
+These third-party assets are included in the repo under their own licenses:
+
+- "[Bolt Cutter Low-poly](https://skfb.ly/prrXU)" by MaX3Dd, licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/). Files are in `Assets/bolt-cutter-low-poly/`. Changes: the metallic, ambient occlusion and roughness maps were packed into one URP texture (`Assets/_Project/Materials/Items/T_BoltCutters_Mask.png`) for the `Mat_BoltCutters` material.
+
 ## Project layout
 
 All original code and content is in `Assets/_Project/` (Scripts, Prefabs, Scenes, Animations, Data, Materials, Audio).
