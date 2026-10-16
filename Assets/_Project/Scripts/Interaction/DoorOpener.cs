@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 // Slides a door open: the fuel cage door and the vault door. Whatever unlocks it (a
 // LockedObjectInteractable, the generator) calls Open(); after the first call it does
-// nothing.
+// nothing. A NavMeshObstacle on the door is switched off once it's open.
 public class DoorOpener : MonoBehaviour
 {
     [Tooltip("How far the door moves when it opens, along its own axes (m).")]
@@ -31,5 +32,9 @@ public class DoorOpener : MonoBehaviour
             yield return null;
         }
         transform.localPosition = end;
+
+        // The doorway is clear now, so stop cutting it out of the infected's NavMesh.
+        if (TryGetComponent(out NavMeshObstacle obstacle))
+            obstacle.enabled = false;
     }
 }
