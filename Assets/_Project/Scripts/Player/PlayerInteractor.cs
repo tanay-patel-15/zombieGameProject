@@ -27,6 +27,9 @@ public class PlayerInteractor : MonoBehaviour
     readonly Collider[] hits = new Collider[16];
     string currentPrompt;
 
+    // Fired when E is used on the focus, whether or not it works. Read by PlayerAnimator.
+    public event Action Interacted;
+
     public Interactable Focus { get; private set; }
     public Inventory Inventory => Inventory.Instance;
     public ObjectiveManager Objectives => ObjectiveManager.Instance;
@@ -68,6 +71,7 @@ public class PlayerInteractor : MonoBehaviour
             return;
 
         Focus.Interact(this);
+        Interacted?.Invoke();
         // The object may have been used up; update the prompt this frame. Unless it started
         // a transition, which locks input and switches this off.
         if (enabled)

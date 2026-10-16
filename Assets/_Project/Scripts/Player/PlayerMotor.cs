@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // Moves the player with a CharacterController: walk, sprint, jump and gravity.
@@ -25,9 +26,12 @@ public class PlayerMotor : MonoBehaviour
     float verticalVelocity;
     float lastGroundedTime = float.NegativeInfinity;
 
-    // Read by the Animator script later.
+    // Read by PlayerAnimator.
     public float Speed => horizontalVelocity.magnitude;
     public bool IsGrounded => controller.isGrounded;
+
+    // Fired the frame a jump starts.
+    public event Action Jumped;
 
     void Awake()
     {
@@ -68,6 +72,7 @@ public class PlayerMotor : MonoBehaviour
         {
             verticalVelocity = Mathf.Sqrt(2f * jumpHeight * -gravity);
             lastGroundedTime = float.NegativeInfinity; // one jump per landing
+            Jumped?.Invoke();
         }
 
         verticalVelocity += gravity * dt;
