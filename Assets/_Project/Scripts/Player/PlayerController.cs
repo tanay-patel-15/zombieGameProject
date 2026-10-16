@@ -56,11 +56,19 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (cameraController != null)
-            cameraController.AddLookInput(lookAction.ReadValue<Vector2>());
+        // While a reading panel is open the player stands still; E still works, to close it.
+        if (interactor != null && interactor.IsReading)
+        {
+            motor.Move(Vector3.zero, false, false);
+        }
+        else
+        {
+            if (cameraController != null)
+                cameraController.AddLookInput(lookAction.ReadValue<Vector2>());
 
-        Vector3 direction = GetCameraRelativeDirection(moveAction.ReadValue<Vector2>());
-        motor.Move(direction, sprintAction.IsPressed(), jumpAction.WasPressedThisFrame());
+            Vector3 direction = GetCameraRelativeDirection(moveAction.ReadValue<Vector2>());
+            motor.Move(direction, sprintAction.IsPressed(), jumpAction.WasPressedThisFrame());
+        }
 
         if (interactor != null && interactAction.WasPressedThisFrame())
             interactor.Interact();

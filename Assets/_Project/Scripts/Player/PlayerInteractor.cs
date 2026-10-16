@@ -9,6 +9,10 @@ public class PlayerInteractor : MonoBehaviour
     // The focused interactable's prompt, or null when nothing is in reach. Static so the
     // HUD doesn't need a reference to whichever player is in the current scene.
     public static event Action<string> PromptChanged;
+    // A short line for the HUD ("The cage is chained shut."), shown for a few seconds.
+    public static event Action<string> MessageShown;
+    // Title and body of the reading panel that just opened, or nulls when it closes.
+    public static event Action<string, string> ReadingChanged;
 
     [Tooltip("How far from the player's chest an interactable can be (m).")]
     [SerializeField] float radius = 1.8f;
@@ -17,6 +21,8 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] LayerMask interactableMask = 1 << 9; // Interactable
     [Tooltip("Layers that block sight of an interactable: walls, shelves, closed doors.")]
     [SerializeField] LayerMask obstructionMask = 1; // Default
+    [Tooltip("Prompt shown while a reading panel is open.")]
+    [SerializeField] string closeReadingPrompt = "Close";
 
     readonly Collider[] hits = new Collider[16];
     string currentPrompt;
@@ -24,12 +30,17 @@ public class PlayerInteractor : MonoBehaviour
     public Interactable Focus { get; private set; }
     public Inventory Inventory => Inventory.Instance;
     public ObjectiveManager Objectives => ObjectiveManager.Instance;
+    // True while a reading panel is open. PlayerController keeps the player still, and
+    // the next E closes the panel instead of using the focus.
+    public bool IsReading { get; private set; }
 
     // Domain reload is off in this project, so statics survive between play sessions.
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void ResetStatics()
     {
         PromptChanged = null;
+        MessageShown = null;
+        ReadingChanged = null;
     }
 
     void Update()
@@ -39,12 +50,20 @@ public class PlayerInteractor : MonoBehaviour
 
     void OnDisable()
     {
+        CloseReading();
         Focus = null;
         SetPrompt(null);
     }
 
     public void Interact()
     {
+        if (IsReading)
+        {
+            CloseReading();
+            RefreshFocus();
+            return;
+        }
+
         if (Focus == null || !Focus.isActiveAndEnabled)
             return;
 
@@ -53,8 +72,35 @@ public class PlayerInteractor : MonoBehaviour
         RefreshFocus();
     }
 
+    public void ShowMessage(string message)
+    {
+        if (!string.IsNullOrEmpty(message))
+            MessageShown?.Invoke(message);
+    }
+
+    public void OpenReading(string title, string body)
+    {
+        IsReading = true;
+        ReadingChanged?.Invoke(title, body ?? "");
+    }
+
+    void CloseReading()
+    {
+        if (!IsReading)
+            return;
+
+        IsReading = false;
+        ReadingChanged?.Invoke(null, null);
+    }
+
     void RefreshFocus()
     {
+        if (IsReading)
+        {
+            SetPrompt(closeReadingPrompt);
+            return;
+        }
+
         Focus = FindNearest();
         SetPrompt(Focus != null ? Focus.Prompt : null);
     }
