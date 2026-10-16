@@ -22,6 +22,7 @@ public class ItemPickup : Interactable
 
         if (interactor.Inventory.AddItem(item))
         {
+            CompleteObjective(interactor);
             enabled = false;
             gameObject.SetActive(false);
         }

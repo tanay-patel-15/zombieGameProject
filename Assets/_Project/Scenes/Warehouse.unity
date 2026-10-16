@@ -3229,6 +3229,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4637181968332722675, guid: ab8931a216dd5b74ab47caa8460637ab, type: 3}
   m_PrefabInstance: {fileID: 210487857}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &211818719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211818721}
+  - component: {fileID: 211818720}
+  m_Layer: 0
+  m_Name: ObjectiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &211818720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211818719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc350e879593ffc4ba7f42fa9c8f6345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
+  objectives:
+  - {fileID: 11400000, guid: af59ad124d55f1d4399ad5e267bd2a28, type: 2}
+  - {fileID: 11400000, guid: 7381a445926cd0d4fbb6f68152325f5b, type: 2}
+  - {fileID: 11400000, guid: aae9e403d58dab147b28c92883430fbc, type: 2}
+  - {fileID: 11400000, guid: 12679658183c33542aa5100e5d831735, type: 2}
+  - {fileID: 11400000, guid: 09c1a1a198d2e1a49909431306b0d256, type: 2}
+  - {fileID: 11400000, guid: 147d69c2fab0cdf469ecedc8bc6df70f, type: 2}
+  - {fileID: 11400000, guid: 04f1a7514794b314bb27e4c4d30cf026, type: 2}
+--- !u!4 &211818721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211818719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219561834
 GameObject:
   m_ObjectHideFlags: 0
@@ -13776,6 +13828,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1329470531189774812, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3003121663
+      objectReference: {fileID: 0}
+    - target: {fileID: 1329470531189774812, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754324036933309124, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754324036933309124, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754324036933309124, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754324036933309124, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754324036933309124, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754324036933309124, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1796030058529928737, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
@@ -13799,6 +13883,30 @@ PrefabInstance:
     - target: {fileID: 3822213498924552701, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636567972168879153, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636567972168879153, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636567972168879153, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636567972168879153, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636567972168879153, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636567972168879153, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4933612511268610313, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13951,6 +14059,10 @@ PrefabInstance:
     - target: {fileID: 8385682646967367101, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514500915077425547, guid: 79fb5cc684d14c2428b194ae54e1f262, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19101,6 +19213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
   prompt: Interact
+  objective: {fileID: 11400000, guid: 147d69c2fab0cdf469ecedc8bc6df70f, type: 2}
   item: {fileID: 11400000, guid: 2da2dbcceaeff4541ab5d0c1c9b6d13e, type: 2}
 --- !u!65 &1076877388
 BoxCollider:
@@ -19170,6 +19283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
   prompt: Interact
+  objective: {fileID: 11400000, guid: 7381a445926cd0d4fbb6f68152325f5b, type: 2}
   item: {fileID: 11400000, guid: 0c980d415a05323469c364b49291ab50, type: 2}
 --- !u!65 &1082094879
 BoxCollider:
@@ -20855,6 +20969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
   prompt: Interact
+  objective: {fileID: 11400000, guid: 12679658183c33542aa5100e5d831735, type: 2}
   item: {fileID: 11400000, guid: c7660466e487f4240a33bc87cc089996, type: 2}
 --- !u!65 &1204399775
 BoxCollider:
@@ -35639,6 +35754,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1414631123}
   - {fileID: 679458273}
+  - {fileID: 211818721}
   - {fileID: 183845280}
   - {fileID: 911475856}
   - {fileID: 737946789}
