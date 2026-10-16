@@ -9,8 +9,17 @@ public abstract class Interactable : MonoBehaviour
 {
     [Tooltip("Shown after the key in the HUD prompt, e.g. \"Use terminal\".")]
     [SerializeField] string prompt = "Interact";
+    [Tooltip("Optional. Ticked in the scene's ObjectiveManager when this object is used successfully.")]
+    [SerializeField] ObjectiveData objective;
 
     public virtual string Prompt => prompt;
 
     public abstract void Interact(PlayerInteractor interactor);
+
+    // Subclasses call this once their action has worked (item taken, door opened).
+    protected void CompleteObjective(PlayerInteractor interactor)
+    {
+        if (objective != null && interactor.Objectives != null)
+            interactor.Objectives.Complete(objective);
+    }
 }

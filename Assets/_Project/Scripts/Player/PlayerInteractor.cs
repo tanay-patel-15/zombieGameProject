@@ -23,6 +23,7 @@ public class PlayerInteractor : MonoBehaviour
 
     public Interactable Focus { get; private set; }
     public Inventory Inventory => Inventory.Instance;
+    public ObjectiveManager Objectives => ObjectiveManager.Instance;
 
     // Domain reload is off in this project, so statics survive between play sessions.
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
