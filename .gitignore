@@ -125,9 +125,12 @@ InitTestScene*.unity*
 /[Aa]ssets/Zombie_Mutant.meta
 /[Aa]ssets/Versatile Studio Assets/
 /[Aa]ssets/Versatile Studio Assets.meta
-/[Aa]ssets/kenney_retro-urban-kit/
-/[Aa]ssets/kenney_retro-urban-kit.meta
-/[Aa]ssets/kenney_space-kit/
-/[Aa]ssets/kenney_space-kit.meta
-/[Aa]ssets/kenney_space-station-kit/
-/[Aa]ssets/kenney_space-station-kit.meta
+
+# Unused formats/previews in the Retro Urban Kit (only FBX format is used in Unity)
+/[Aa]ssets/kenney_retro-urban-kit/Models/GLB format/
+/[Aa]ssets/kenney_retro-urban-kit/Models/GLB format.meta
+/[Aa]ssets/kenney_retro-urban-kit/Models/OBJ format/
+/[Aa]ssets/kenney_retro-urban-kit/Models/OBJ format.meta
+/[Aa]ssets/kenney_retro-urban-kit/Previews/
+/[Aa]ssets/kenney_retro-urban-kit/Previews.meta
+
