@@ -23,6 +23,11 @@ Until the packs are imported, models and prefabs that use them show up as missin
 
 The Radio Relay Tower also uses Kenney's [Retro Urban Kit](https://kenney.nl/assets/retro-urban-kit) (CC0). Download it and unzip it to `Assets/kenney_retro-urban-kit/`.
 
+The consoles, terminal, generator, gates, amplifier and dish use two more Kenney kits (CC0). Download each one and unzip its `Models/FBX format/` folder (with `Textures/`) into the folder shown, keeping the `Models/FBX format/` path:
+
+- [Space Kit](https://kenney.nl/assets/space-kit) → `Assets/kenney_space-kit/`
+- [Space Station Kit](https://kenney.nl/assets/space-station-kit) → `Assets/kenney_space-station-kit/`
+
 The player and infected animations and the two characters (the player and one infected look) are from [Mixamo](https://www.mixamo.com) and are included in `Assets/_Project/Animations/`. Their textures are extracted at 1024 px into `Assets/_Project/Materials/Textures/`.
 
 ## Credits
