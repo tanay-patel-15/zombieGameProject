@@ -66,6 +66,13 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    // Empties the inventory, for restarting the game from the ending.
+    public void Clear()
+    {
+        items.Clear();
+        Changed?.Invoke();
+    }
+
     // SceneTransitionManager calls this each time a scene starts.
     public void SaveCheckpoint()
     {
