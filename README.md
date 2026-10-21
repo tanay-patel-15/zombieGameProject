@@ -17,16 +17,9 @@ Until the packs are imported, models and prefabs that use them show up as missin
 | Pack | Publisher | Import folder | Used for |
 |---|---|---|---|
 | Sci-Fi Warehouse Construction Kit | Sickhead Games | `Assets/SciFi Warehouse Kit/` | Warehouse level |
-| Zombie Mutant | TODO | `Assets/Zombie_Mutant/` | Infected model |
-| HiTech Energy Cell | TODO | `Assets/HiTech/` | UV Power Core |
+| Zombie Mutant Free | buxoided | `Assets/Zombie_Mutant/` | Infected model |
+| HiTech SciFi Energy Cell | AntiDed GameDev | `Assets/HiTech/` | UV Power Core |
 | Demo City By Versatile Studio | Versatile Studio | `Assets/Versatile Studio Assets/` | Radio Relay Tower city streets |
-
-The Radio Relay Tower also uses Kenney's [Retro Urban Kit](https://kenney.nl/assets/retro-urban-kit) (CC0). Download it and unzip it to `Assets/kenney_retro-urban-kit/`.
-
-The consoles, terminal, generator, gates, amplifier and dish use two more Kenney kits (CC0). Download each one and unzip its `Models/FBX format/` folder (with `Textures/`) into the folder shown, keeping the `Models/FBX format/` path:
-
-- [Space Kit](https://kenney.nl/assets/space-kit) → `Assets/kenney_space-kit/`
-- [Space Station Kit](https://kenney.nl/assets/space-station-kit) → `Assets/kenney_space-station-kit/`
 
 The player and infected animations and the two characters (the player and one infected look) are from [Mixamo](https://www.mixamo.com) and are included in `Assets/_Project/Animations/`. Their textures are extracted at 1024 px into `Assets/_Project/Materials/Textures/`.
 
@@ -35,6 +28,7 @@ The player and infected animations and the two characters (the player and one in
 These third-party assets are included in the repo under their own licenses:
 
 - "[Bolt Cutter Low-poly](https://skfb.ly/prrXU)" by MaX3Dd, licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/). Files are in `Assets/bolt-cutter-low-poly/`. Changes: the metallic, ambient occlusion and roughness maps were packed into one URP texture (`Assets/_Project/Materials/Items/T_BoltCutters_Mask.png`) for the `Mat_BoltCutters` material.
+- [Retro Urban Kit](https://kenney.nl/assets/retro-urban-kit), [Space Kit](https://kenney.nl/assets/space-kit), and [Space Station Kit](https://kenney.nl/assets/space-station-kit) by [Kenney](https://www.kenney.nl), licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Files are in `Assets/kenney_retro-urban-kit/`, `Assets/kenney_space-kit/`, and `Assets/kenney_space-station-kit/`.
 
 ## Project layout
 
