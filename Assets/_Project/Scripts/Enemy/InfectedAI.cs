@@ -79,6 +79,10 @@ public class InfectedAI : MonoBehaviour
 
     void Start()
     {
+        // The agent is off in the prefab. In a build it wakes before the NavMeshSurface has
+        // added the scene's NavMesh, can't find one and never moves; by Start it's there.
+        agent.enabled = true;
+
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
