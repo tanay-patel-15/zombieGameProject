@@ -13,7 +13,7 @@
 ## Memory (Obsidian vault)
 This project's long-term memory is the Obsidian vault at `D:\OBDISIAN VAULTS\ZombieGame-Vault`.
 - STATE.md, DESIGN.md and the newest session log are injected at session start by a hook. Treat them as the current truth.
-- `PLAN.md` is the build plan: script responsibilities, dependency order, the day-by-day schedule to the 2026-10-21 deadline, editor setup and the test checklist. Check it before building a system. `BRIEF.md` is the assignment text and rubric; check work against it.
+- `PLAN.md` is the build plan: script responsibilities, dependency order, the day-by-day schedule to the 2026-10-30 deadline, editor setup and the test checklist. Check it before building a system. `BRIEF.md` is the assignment text and rubric; check work against it.
 - Before guessing why something was built a certain way, search the vault: `DECISIONS.md`, `systems/`, then older `sessions/`.
 - DESIGN.md is mine. Don't edit it; propose changes instead.
 - When I say we're done or wrapping up, or run /wrap, update the vault as described in `.claude/commands/wrap.md`. In long sessions, offer to /wrap before the context gets compacted.
