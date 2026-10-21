@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   id: signal_amplifier
   displayName: Signal Amplifier
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b89109623b58aff4194a5906d1552f47, type: 3}
   description: Boosts the relay's broadcast signal. Fits the Main Relay Console.
