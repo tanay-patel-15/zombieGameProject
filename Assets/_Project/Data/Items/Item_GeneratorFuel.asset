@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   id: generator_fuel
   displayName: Generator Fuel
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: dcf228b066e6cc04b93a68fb6f0d0cf0, type: 3}
   description: A full jerry can. Enough to get the backup generator running.
