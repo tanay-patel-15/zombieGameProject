@@ -19,7 +19,13 @@ public abstract class Interactable : MonoBehaviour
     // Subclasses call this once their action has worked (item taken, door opened).
     protected void CompleteObjective(PlayerInteractor interactor)
     {
-        if (objective != null && interactor.Objectives != null)
-            interactor.Objectives.Complete(objective);
+        CompleteObjective(interactor, objective);
+    }
+
+    // For objects that finish more than one step, like the relay console.
+    protected void CompleteObjective(PlayerInteractor interactor, ObjectiveData step)
+    {
+        if (step != null && interactor.Objectives != null)
+            interactor.Objectives.Complete(step);
     }
 }
